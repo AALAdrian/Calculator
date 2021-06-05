@@ -15,6 +15,7 @@ namespace Calculator
     {
         Boolean OperatorUsed = false;
         double finalans = 0;
+        string lastOperatorUsed;
         public Form1()
         {
             InitializeComponent();
@@ -39,7 +40,8 @@ namespace Calculator
 
                 //convert display text to double remove any nonumeric 
                 double input = Convert.ToDouble(Regex.Replace(display.Text, "[^.0-9]", ""));
-                calculate(input, btnOperator.Text);
+                
+                calculate(input, lastOperatorUsed, btnOperator.Text);
                 displayHold.Text = display.Text + btnOperator.Text;
                 display.Clear();
 
@@ -58,9 +60,17 @@ namespace Calculator
             display.Clear();
             displayHold.Clear();
         }
-        private void calculate(double input, string operand)
+        private void calculate(double input, string operand, string newOperator)
         {
-            double answer = Convert.ToDouble(Regex.Replace(displayHold.Text, "[^.0-9]", ""));
+            double answer = 0;
+            try
+            {
+                answer = Convert.ToDouble(Regex.Replace(displayHold.Text, "[^.0-9]", ""));
+            }
+            catch(Exception)
+            {
+                answer = 0;
+            }
             if (operand == "+")
             {
                 System.Diagnostics.Debug.WriteLine(input + operand + answer + "=");
@@ -85,9 +95,19 @@ namespace Calculator
                 finalans = answer / input;
                 System.Diagnostics.Debug.WriteLine(finalans);
             }
-            display.Text = Convert.ToString(finalans);
-                
+            else
+            {
+                System.Diagnostics.Debug.WriteLine(input + operand + answer + "=");
+                finalans = answer + input;
+            }
+                display.Text = Convert.ToString(finalans);
+                lastOperatorUsed = newOperator;
         }
 
+        private void btnEquals_Click(object sender, EventArgs e)
+        {
+            double input = Convert.ToDouble(Regex.Replace(display.Text, "[^.0-9]", ""));
+            calculate(input, lastOperatorUsed, "");
+        }
     }
 }
