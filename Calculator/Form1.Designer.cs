@@ -46,8 +46,9 @@ namespace Calculator
             this.btnMult = new System.Windows.Forms.Button();
             this.btnMinus = new System.Windows.Forms.Button();
             this.btnDiv = new System.Windows.Forms.Button();
+            this.btnClearE = new System.Windows.Forms.Button();
+            this.display = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
-            this.display = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // btnNeg
@@ -231,6 +232,26 @@ namespace Calculator
             this.btnDiv.Text = "÷";
             this.btnDiv.UseVisualStyleBackColor = true;
             // 
+            // btnClearE
+            // 
+            this.btnClearE.AutoSize = true;
+            this.btnClearE.Location = new System.Drawing.Point(78, 112);
+            this.btnClearE.Name = "btnClearE";
+            this.btnClearE.Size = new System.Drawing.Size(60, 60);
+            this.btnClearE.TabIndex = 1;
+            this.btnClearE.Text = "CE";
+            this.btnClearE.UseVisualStyleBackColor = true;
+            this.btnClearE.Click += new System.EventHandler(this.btnClearE_Click);
+            // 
+            // display
+            // 
+            this.display.Location = new System.Drawing.Point(13, 12);
+            this.display.Multiline = true;
+            this.display.Name = "display";
+            this.display.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.display.Size = new System.Drawing.Size(258, 94);
+            this.display.TabIndex = 3;
+            // 
             // btnClear
             // 
             this.btnClear.AutoSize = true;
@@ -240,16 +261,7 @@ namespace Calculator
             this.btnClear.TabIndex = 1;
             this.btnClear.Text = "C";
             this.btnClear.UseVisualStyleBackColor = true;
-            // 
-            // display
-            // 
-            this.display.FormattingEnabled = true;
-            this.display.ItemHeight = 20;
-            this.display.Location = new System.Drawing.Point(12, 12);
-            this.display.Name = "display";
-            this.display.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.display.Size = new System.Drawing.Size(258, 84);
-            this.display.TabIndex = 2;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // Form1
             // 
@@ -260,6 +272,7 @@ namespace Calculator
             this.Controls.Add(this.btnMinus);
             this.Controls.Add(this.btnEquals);
             this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnClearE);
             this.Controls.Add(this.btnDiv);
             this.Controls.Add(this.btnMult);
             this.Controls.Add(this.btnPlus);
@@ -275,9 +288,12 @@ namespace Calculator
             this.Controls.Add(this.btn4);
             this.Controls.Add(this.btn0);
             this.Controls.Add(this.btnNeg);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,7 +318,9 @@ namespace Calculator
         private System.Windows.Forms.Button btnMinus;
         private System.Windows.Forms.Button btnDiv;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.ListBox display;
+        private System.Windows.Forms.TextBox display;
+        private System.Windows.Forms.Button btnClearE;
+        private System.Windows.Forms.Button button1;
     }
 }
 

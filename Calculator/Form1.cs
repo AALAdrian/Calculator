@@ -20,9 +20,21 @@ namespace Calculator
 
         private void btn_Click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
-            display.Items.Add(btn.Text);
+            Button btntext = (Button)sender;
+            //display.Items.Add(btn.Text);
+            display.Text += btntext.Text;
+            
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            //display.Text.Remove(display.Text.LastIndexOf(display.Text));
+            display.Undo();
+        }
+
+        private void btnClearE_Click(object sender, EventArgs e)
+        {
+            display.Clear();
+        }
     }
 }
