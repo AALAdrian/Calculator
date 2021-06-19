@@ -279,9 +279,11 @@ namespace Calculator
             this.display.MaxLength = 16;
             this.display.Multiline = true;
             this.display.Name = "display";
+            this.display.ReadOnly = true;
             this.display.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.display.Size = new System.Drawing.Size(258, 54);
             this.display.TabIndex = 3;
+            this.display.TabStop = false;
             this.display.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnClear
@@ -301,6 +303,7 @@ namespace Calculator
             this.displayHold.BackColor = System.Drawing.SystemColors.Control;
             this.displayHold.Location = new System.Drawing.Point(12, 48);
             this.displayHold.Name = "displayHold";
+            this.displayHold.ReadOnly = true;
             this.displayHold.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.displayHold.Size = new System.Drawing.Size(258, 27);
             this.displayHold.TabIndex = 3;

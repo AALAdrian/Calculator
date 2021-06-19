@@ -71,37 +71,19 @@ namespace Calculator
             {
                 answer = 0;
             }
-            if (operand == "+")
+
+            //switch statement for opperand
+            finalans = operand switch
             {
-                System.Diagnostics.Debug.WriteLine(input + operand + answer + "=");
-                finalans = answer + input;
-                System.Diagnostics.Debug.WriteLine(finalans);
-            }
-            else if (operand == "-")
-            {
-                System.Diagnostics.Debug.WriteLine(input + operand + answer + "=");
-                finalans = answer - input;
-                System.Diagnostics.Debug.WriteLine(finalans);
-            }
-            else if (operand == "×")
-            {
-                System.Diagnostics.Debug.WriteLine(input + operand + answer + "=");
-                finalans = answer * input;
-                System.Diagnostics.Debug.WriteLine(finalans);
-            }
-            else if (operand == "÷")
-            {
-                System.Diagnostics.Debug.WriteLine(input + operand + answer + "=");
-                finalans = answer / input;
-                System.Diagnostics.Debug.WriteLine(finalans);
-            }
-            else
-            {
-                System.Diagnostics.Debug.WriteLine(input + operand + answer + "=");
-                finalans = answer + input;
-            }
-                display.Text = Convert.ToString(finalans);
-                lastOperatorUsed = newOperator;
+                "+" => answer + input,
+                "-" => answer - input,
+                "×" => answer * input,
+                "÷" => answer / input,
+                _ => input,
+            };
+
+            display.Text = Convert.ToString(finalans);
+            lastOperatorUsed = newOperator;
         }
 
         private void btnEquals_Click(object sender, EventArgs e)
