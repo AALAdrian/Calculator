@@ -109,5 +109,57 @@ namespace Calculator
             double input = Convert.ToDouble(Regex.Replace(display.Text, "[^.0-9]", ""));
             calculate(input, lastOperatorUsed, "");
         }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.NumPad0:
+                    btn0.PerformClick();
+                    break;
+                case Keys.NumPad1:
+                    btn1.PerformClick();
+                    break;
+                case Keys.NumPad2:
+                    btn2.PerformClick();
+                    break;
+                case Keys.NumPad3:
+                    btn3.PerformClick();
+                    break;
+                case Keys.NumPad4:
+                    btn4.PerformClick();
+                    break;
+                case Keys.NumPad5:
+                    btn5.PerformClick();
+                    break;
+                case Keys.NumPad6:
+                    btn6.PerformClick();
+                    break;
+                case Keys.NumPad7:
+                    btn7.PerformClick();
+                    break;
+                case Keys.NumPad8:
+                    btn8.PerformClick();
+                    break;
+                case Keys.NumPad9:
+                    btn9.PerformClick();
+                    break;
+                case Keys.Multiply:
+                    btnMult.PerformClick();
+                    break;
+                case Keys.Add:
+                    btnPlus.PerformClick();
+                    break;
+                case Keys.Subtract:
+                    btnMinus.PerformClick();
+                    break;
+                case Keys.Decimal:
+                    btnDot.PerformClick();
+                    break;
+                case Keys.Divide:
+                    btnDiv.PerformClick();
+                    break;
+            }
+        }
     }
 }
