@@ -51,7 +51,7 @@ namespace Calculator
             this.btnClear = new System.Windows.Forms.Button();
             this.displayHold = new System.Windows.Forms.TextBox();
             this.delete = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.squareRoot = new System.Windows.Forms.Button();
             this.inverse = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.memoryClear = new System.Windows.Forms.Button();
@@ -71,6 +71,7 @@ namespace Calculator
             this.btnNeg.TabStop = false;
             this.btnNeg.Text = "±";
             this.btnNeg.UseVisualStyleBackColor = true;
+            this.btnNeg.Click += new System.EventHandler(this.btnNeg_Click);
             // 
             // btn0
             // 
@@ -106,7 +107,7 @@ namespace Calculator
             this.btnEquals.TabStop = false;
             this.btnEquals.Text = "=";
             this.btnEquals.UseVisualStyleBackColor = true;
-            this.btnEquals.Click += new System.EventHandler(this.btnEquals_Click);
+            this.btnEquals.Click += new System.EventHandler(this.Btn_Equals_Click);
             // 
             // btn3
             // 
@@ -274,7 +275,7 @@ namespace Calculator
             this.btnClearE.TabStop = false;
             this.btnClearE.Text = "CE";
             this.btnClearE.UseVisualStyleBackColor = true;
-            this.btnClearE.Click += new System.EventHandler(this.BtnClearE_Click);
+            this.btnClearE.Click += new System.EventHandler(this.Btn_ClearE_Click);
             // 
             // display
             // 
@@ -301,7 +302,7 @@ namespace Calculator
             this.btnClear.TabStop = false;
             this.btnClear.Text = "C";
             this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
+            this.btnClear.Click += new System.EventHandler(this.Btn_Clear_Click);
             // 
             // displayHold
             // 
@@ -324,20 +325,20 @@ namespace Calculator
             this.delete.TabStop = false;
             this.delete.Text = "<=";
             this.delete.UseVisualStyleBackColor = true;
-            this.delete.Click += new System.EventHandler(this.delete_Click);
+            this.delete.Click += new System.EventHandler(this.Btn_Delete_Click);
             // 
-            // button2
+            // squareRoot
             // 
-            this.button2.AutoSize = true;
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(276, 135);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 60);
-            this.button2.TabIndex = 1;
-            this.button2.TabStop = false;
-            this.button2.Text = "√";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Btn_Operator_Click);
+            this.squareRoot.AutoSize = true;
+            this.squareRoot.Location = new System.Drawing.Point(276, 135);
+            this.squareRoot.Name = "squareRoot";
+            this.squareRoot.Size = new System.Drawing.Size(60, 60);
+            this.squareRoot.TabIndex = 1;
+            this.squareRoot.TabStop = false;
+            this.squareRoot.Tag = "√";
+            this.squareRoot.Text = "√";
+            this.squareRoot.UseVisualStyleBackColor = true;
+            this.squareRoot.Click += new System.EventHandler(this.Btn_Special_Operator_Click);
             // 
             // inverse
             // 
@@ -347,22 +348,23 @@ namespace Calculator
             this.inverse.Size = new System.Drawing.Size(60, 60);
             this.inverse.TabIndex = 1;
             this.inverse.TabStop = false;
+            this.inverse.Tag = "I";
             this.inverse.Text = "1/x";
             this.inverse.UseVisualStyleBackColor = true;
-            this.inverse.Click += new System.EventHandler(this.inverse_Click);
+            this.inverse.Click += new System.EventHandler(this.Btn_Special_Operator_Click);
             // 
             // button5
             // 
             this.button5.AutoSize = true;
-            this.button5.Enabled = false;
             this.button5.Location = new System.Drawing.Point(276, 202);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(60, 60);
             this.button5.TabIndex = 1;
             this.button5.TabStop = false;
+            this.button5.Tag = "%";
             this.button5.Text = "%";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.Btn_Operator_Click);
+            this.button5.Click += new System.EventHandler(this.Btn_Special_Operator_Click);
             // 
             // memoryClear
             // 
@@ -379,7 +381,7 @@ namespace Calculator
             this.memoryClear.TabStop = false;
             this.memoryClear.Text = "MC";
             this.memoryClear.UseVisualStyleBackColor = false;
-            this.memoryClear.Click += new System.EventHandler(this.BtnClear_Click);
+            this.memoryClear.Click += new System.EventHandler(this.memoryClear_Click);
             // 
             // memoryRecall
             // 
@@ -396,13 +398,12 @@ namespace Calculator
             this.memoryRecall.TabStop = false;
             this.memoryRecall.Text = "MR";
             this.memoryRecall.UseVisualStyleBackColor = false;
-            this.memoryRecall.Click += new System.EventHandler(this.BtnClear_Click);
+            this.memoryRecall.Click += new System.EventHandler(this.Memory_Recall_Click);
             // 
             // memorySave
             // 
             this.memorySave.AutoSize = true;
             this.memorySave.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.memorySave.Enabled = false;
             this.memorySave.FlatAppearance.BorderSize = 0;
             this.memorySave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.memorySave.Location = new System.Drawing.Point(144, 102);
@@ -413,13 +414,12 @@ namespace Calculator
             this.memorySave.TabStop = false;
             this.memorySave.Text = "MS";
             this.memorySave.UseVisualStyleBackColor = false;
-            this.memorySave.Click += new System.EventHandler(this.BtnClear_Click);
+            this.memorySave.Click += new System.EventHandler(this.Memory_Save_Click);
             // 
             // memoryAdd
             // 
             this.memoryAdd.AutoSize = true;
             this.memoryAdd.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.memoryAdd.Enabled = false;
             this.memoryAdd.FlatAppearance.BorderSize = 0;
             this.memoryAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.memoryAdd.Location = new System.Drawing.Point(210, 102);
@@ -430,13 +430,12 @@ namespace Calculator
             this.memoryAdd.TabStop = false;
             this.memoryAdd.Text = "M+";
             this.memoryAdd.UseVisualStyleBackColor = false;
-            this.memoryAdd.Click += new System.EventHandler(this.BtnClear_Click);
+            this.memoryAdd.Click += new System.EventHandler(this.Memory_Add_Click);
             // 
             // memoryMinus
             // 
             this.memoryMinus.AutoSize = true;
             this.memoryMinus.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.memoryMinus.Enabled = false;
             this.memoryMinus.FlatAppearance.BorderSize = 0;
             this.memoryMinus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.memoryMinus.Location = new System.Drawing.Point(276, 102);
@@ -447,7 +446,7 @@ namespace Calculator
             this.memoryMinus.TabStop = false;
             this.memoryMinus.Text = "M-";
             this.memoryMinus.UseVisualStyleBackColor = false;
-            this.memoryMinus.Click += new System.EventHandler(this.BtnClear_Click);
+            this.memoryMinus.Click += new System.EventHandler(this.Memory_Minus_Click);
             // 
             // Form1
             // 
@@ -468,7 +467,7 @@ namespace Calculator
             this.Controls.Add(this.btnClearE);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.inverse);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.squareRoot);
             this.Controls.Add(this.btnDiv);
             this.Controls.Add(this.btnMult);
             this.Controls.Add(this.btnPlus);
@@ -521,7 +520,7 @@ namespace Calculator
         //private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox displayHold;
         private System.Windows.Forms.Button delete;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button squareRoot;
         private System.Windows.Forms.Button inverse;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button memoryClear;
