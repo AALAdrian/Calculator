@@ -13,10 +13,11 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
-        Boolean OperatorUsed = false;
+        Boolean OperatorUsed , Answered = false;
         double finalans, lastinput;
         
         string lastOperatorUsed;
+        char[] operators = { '+', '-', '×', '÷'};
         public Form1()
         {
             InitializeComponent();
@@ -26,35 +27,56 @@ namespace Calculator
         private void Btn_Click(object sender, EventArgs e)
         {
             Button btnText = (Button)sender;
-            if (display.Text.TrimEnd('.').Length != 16)
+            if (!Answered)
             {
-                if(display.Text == "0")
+                if (display.Text.TrimEnd('.').Length <= 15 || display.Text.TrimStart('0','.').Length <=15)
                 {
-                    display.Text = btnText.Text;
-                }
-                else
-                {
-                    display.Text += btnText.Text;
-                }
+                    if (display.Text == "0")
+                    {
+                        if (btnText.Text == ".")
+                        {
+                            display.Text += btnText.Text;
+                        }
+                        else
+                        {
+                            display.Text = btnText.Text;
+                        }
+                    }
+                    else
+                    {
+                        display.Text += btnText.Text;
+                    }
 
+                }
+            }
+            else
+            {
+                display.Text = btnText.Text;
+                Answered = false;
             }
             OperatorUsed = false;
             
         }
         private void Btn_Operator_Click(object sender, EventArgs e)
         {
-            if (!OperatorUsed)
+            Button btnOperator = (Button)sender;
+            if (OperatorUsed)
             {
-                Button btnOperator = (Button)sender;
+                displayHold.Text = displayHold.Text.Remove(displayHold.Text.Length - 1);
+                displayHold.Text += btnOperator.Text;
+
+            }
+            else
+            {
                 //display.Text += btnOperator.Text;
                 OperatorUsed = true;
-
+                Answered = true;
                 //convert display text to double remove any nonumeric 
-                double input = Convert.ToDouble(Regex.Replace(display.Text, "[^.0-9]", ""));
+                double input = Convert.ToDouble(display.Text.TrimEnd(operators));
 
                 Calculate(input, lastOperatorUsed, btnOperator.Text);
                 displayHold.Text = display.Text + btnOperator.Text;
-                display.Clear();
+                display.Text = Convert.ToString(finalans);
 
             }
            
@@ -76,7 +98,7 @@ namespace Calculator
             double answer;
             try
             {
-                answer = Convert.ToDouble(Regex.Replace(displayHold.Text, "[^.0-9]", ""));
+                answer = Convert.ToDouble(displayHold.Text.TrimEnd(operators));
             }
             catch(Exception)
             {
@@ -97,11 +119,23 @@ namespace Calculator
             lastOperatorUsed = newOperator;
         }
 
+        private void delete_Click(object sender, EventArgs e)
+        {
+            if (display.Text.Length > 1)
+            {
+                display.Text = display.Text.Remove(display.Text.Length - 1);
+            }
+            else
+            {
+                display.Text = "0";
+            }
+        }
+
         private void btnEquals_Click(object sender, EventArgs e)
         {
-            double input = Convert.ToDouble(Regex.Replace(display.Text, "[^.0-9]", ""));
+            double input = Convert.ToDouble(display.Text.TrimEnd(operators));
+            displayHold.Text += display.Text;
             Calculate(input, lastOperatorUsed, "");
-            displayHold.Text = Convert.ToString(finalans+lastOperatorUsed+input);
         }
 
         //KEYBIND

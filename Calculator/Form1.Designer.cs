@@ -317,7 +317,6 @@ namespace Calculator
             // delete
             // 
             this.delete.AutoSize = true;
-            this.delete.Enabled = false;
             this.delete.Location = new System.Drawing.Point(12, 135);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(60, 60);
@@ -325,7 +324,7 @@ namespace Calculator
             this.delete.TabStop = false;
             this.delete.Text = "<=";
             this.delete.UseVisualStyleBackColor = true;
-            this.delete.Click += new System.EventHandler(this.BtnClear_Click);
+            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // button2
             // 
