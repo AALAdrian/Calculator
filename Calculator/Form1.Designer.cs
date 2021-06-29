@@ -52,7 +52,7 @@ namespace Calculator
             this.displayHold = new System.Windows.Forms.TextBox();
             this.delete = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.inverse = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.memoryClear = new System.Windows.Forms.Button();
             this.memoryRecall = new System.Windows.Forms.Button();
@@ -339,18 +339,17 @@ namespace Calculator
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Btn_Operator_Click);
             // 
-            // button4
+            // inverse
             // 
-            this.button4.AutoSize = true;
-            this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(276, 268);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(60, 60);
-            this.button4.TabIndex = 1;
-            this.button4.TabStop = false;
-            this.button4.Text = "1/x";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.Btn_Operator_Click);
+            this.inverse.AutoSize = true;
+            this.inverse.Location = new System.Drawing.Point(276, 268);
+            this.inverse.Name = "inverse";
+            this.inverse.Size = new System.Drawing.Size(60, 60);
+            this.inverse.TabIndex = 1;
+            this.inverse.TabStop = false;
+            this.inverse.Text = "1/x";
+            this.inverse.UseVisualStyleBackColor = true;
+            this.inverse.Click += new System.EventHandler(this.inverse_Click);
             // 
             // button5
             // 
@@ -468,7 +467,7 @@ namespace Calculator
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnClearE);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.inverse);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnDiv);
             this.Controls.Add(this.btnMult);
@@ -523,7 +522,7 @@ namespace Calculator
         private System.Windows.Forms.TextBox displayHold;
         private System.Windows.Forms.Button delete;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button inverse;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button memoryClear;
         private System.Windows.Forms.Button memoryRecall;

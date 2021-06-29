@@ -13,7 +13,11 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
-        Boolean OperatorUsed , Answered = false;
+        Boolean isOperatorUsed,
+                isSpecialOperatorsUsed,
+                isAnswered,
+                isEqualPressed,
+                isOperatorUsed1;
         double finalans, lastinput;
         
         string lastOperatorUsed;
@@ -27,7 +31,7 @@ namespace Calculator
         private void Btn_Click(object sender, EventArgs e)
         {
             Button btnText = (Button)sender;
-            if (!Answered)
+            if (!isAnswered)
             {
                 if (display.Text.TrimEnd('.').Length <= 15 || display.Text.TrimStart('0','.').Length <=15)
                 {
@@ -52,15 +56,15 @@ namespace Calculator
             else
             {
                 display.Text = btnText.Text;
-                Answered = false;
+                isAnswered = false;
             }
-            OperatorUsed = false;
-            
+            isOperatorUsed = false;
+            isEqualPressed = false;
         }
         private void Btn_Operator_Click(object sender, EventArgs e)
         {
             Button btnOperator = (Button)sender;
-            if (OperatorUsed)
+            if (isOperatorUsed)
             {
                 displayHold.Text = displayHold.Text.Remove(displayHold.Text.Length - 1);
                 displayHold.Text += btnOperator.Text;
@@ -68,9 +72,11 @@ namespace Calculator
             }
             else
             {
-                //display.Text += btnOperator.Text;
-                OperatorUsed = true;
-                Answered = true;
+                isOperatorUsed = true;
+                isAnswered = true;
+                isOperatorUsed1 = true;
+                isEqualPressed = false;
+
                 //convert display text to double remove any nonumeric 
                 double input = Convert.ToDouble(display.Text.TrimEnd(operators));
 
@@ -86,12 +92,18 @@ namespace Calculator
             //display.Text.Remove(display.Text.LastIndexOf(display.Text));
             //display.Undo();
             display.Text = "0";
+            isOperatorUsed = false;
         }
 
         private void BtnClearE_Click(object sender, EventArgs e)
         {
             display.Text ="0";
             displayHold.Clear();
+            isAnswered = false;
+            isEqualPressed = false;
+            isOperatorUsed = false;
+            isOperatorUsed1 = false;
+            isSpecialOperatorsUsed = false;
         }
         private void Calculate(double input, string operand, string newOperator)
         {
@@ -131,11 +143,40 @@ namespace Calculator
             }
         }
 
+        private void inverse_Click(object sender, EventArgs e)
+        {
+            displayHold.Text = $"1/({display.Text})";
+            double inverseAns = 1 / Convert.ToDouble(display.Text);
+            display.Text = $"{inverseAns}";
+            isSpecialOperatorsUsed = true;
+            isEqualPressed = false;
+        }
+
         private void btnEquals_Click(object sender, EventArgs e)
         {
-            double input = Convert.ToDouble(display.Text.TrimEnd(operators));
-            displayHold.Text += display.Text;
-            Calculate(input, lastOperatorUsed, "");
+            if (isEqualPressed)
+            {
+
+            }
+            else if (isSpecialOperatorsUsed)
+            {
+                displayHold.Text += " =";
+                isSpecialOperatorsUsed = false;
+                isEqualPressed = true;
+            }
+            else if (isOperatorUsed1)
+            {
+                double input = Convert.ToDouble(display.Text.TrimEnd(operators));
+                lastinput = Convert.ToDouble(display.Text);
+                Calculate(input, lastOperatorUsed, "");
+                displayHold.Text = $"{displayHold.Text}{lastinput} =";
+                isEqualPressed = true;
+            }
+            else if (!isEqualPressed)
+            {
+                displayHold.Text = $"{display.Text} =s";
+                isEqualPressed = true;
+            }
         }
 
         //KEYBIND
