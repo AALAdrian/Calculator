@@ -11,9 +11,9 @@ using System.Text.RegularExpressions;
 
 namespace Calculator
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
-        // Global Variables
+        // Variables
         Boolean isOperatorUsed,
                 isSpecialOperatorsUsed,
                 isAnswered,
@@ -30,11 +30,16 @@ namespace Calculator
 
         char[]  operators = { '+', '-', '×', '÷'};
         //---------------------
-        public Form1()
+        public Main()
         {
             InitializeComponent();
         }
+        // COVERTERS
 
+        private double GetDisplayTextDouble()
+        {
+            return Convert.ToDouble(display.Text);
+        }
         //---------------------
         private void Btn_Click(object sender, EventArgs e)
         {
@@ -85,15 +90,13 @@ namespace Calculator
             }
             else
             {
-                isOperatorUsed = true;
-                isAnswered = true;
-                isOperatorUsed1 = true;
+                isOperatorUsed = isAnswered = isOperatorUsed1 = true;
                 isEqualPressed = false;
 
                 //convert display text to double remove any nonumeric 
                 double input = Convert.ToDouble(display.Text.TrimEnd(operators));
 
-                Calculate(input, lastOperatorUsed, btnOperator.Text);
+                display.Text = Calculate(GetDisplayHoldDouble(), input, lastOperatorUsed, btnOperator.Text);
                 displayHold.Text = display.Text + btnOperator.Text;
                 display.Text = Convert.ToString(finalans);
 
@@ -101,6 +104,7 @@ namespace Calculator
            
         }
 
+        // MEMORY
         private void Memory_Recall_Click(object sender, EventArgs e)
         {
             display.Text = $"{memory}";
@@ -109,56 +113,59 @@ namespace Calculator
         private void memoryClear_Click(object sender, EventArgs e)
         {
             memory = 0;
-            memoryClear.Enabled = false;
-            memoryRecall.Enabled = false;
+            memoryClear.Enabled = memoryRecall.Enabled = false;
         }
 
         private void Memory_Add_Click(object sender, EventArgs e)
         {
-            memory += Convert.ToDouble(display.Text);
+            memory += GetDisplayTextDouble();
         }
 
         private void Memory_Minus_Click(object sender, EventArgs e)
         {
-            memory -= Convert.ToDouble(display.Text);
+            memory -= GetDisplayTextDouble();
         }
         private void Memory_Save_Click(object sender, EventArgs e)
         {
-            memory = Convert.ToDouble(display.Text);
-            memoryClear.Enabled = true;
-            memoryRecall.Enabled = true;
+            memory = GetDisplayTextDouble();
+            memoryClear.Enabled = memoryRecall.Enabled = true;
         }
         private void btnNeg_Click(object sender, EventArgs e)
         {
-            double negation = Convert.ToDouble(display.Text);
+            double negation = GetDisplayTextDouble();
             negation *= -1;
             display.Text = $"{negation}";
         }
-
-        private void Calculate(double input, string operand, string newOperator)
+        private double GetDisplayHoldDouble()
         {
-            double answer;
+            double displayHold;
             try
             {
-                answer = Convert.ToDouble(displayHold.Text.TrimEnd(operators));
+                displayHold = Convert.ToDouble(this.displayHold.Text.TrimEnd(operators));
             }
-            catch(Exception)
+            catch (Exception)
             {
-                answer = 0;
+                displayHold = 0;
             }
-
+            return displayHold;
+        }
+        private string Calculate(double left, double right,string operand, string newOperator =  "")
+        {
+                      
             //switch statement for opperand
             finalans = operand switch
             {
-                "+" => answer + input,
-                "-" => answer - input,
-                "×" => answer * input,
-                "÷" => answer / input,
-                _ => input,
+                "+" => left + right,
+                "-" => left - right,
+                "×" => left * right,
+                "÷" => left / right,
+                _ => right,
             };
-
-            display.Text = Convert.ToString(finalans);
-            lastOperatorUsed = newOperator;
+            if (!string.IsNullOrEmpty(newOperator))
+            {
+                lastOperatorUsed = newOperator;
+            }
+            return Convert.ToString(finalans);
         }
         private void Btn_Special_Operator_Click(object sender, EventArgs e)
         {
@@ -172,13 +179,13 @@ namespace Calculator
                         displayHold.Text = display.Text;
                     }
                     displayHold.Text = $"√({displayHold.Text})";
-                    double sqrtAns = Math.Sqrt(Convert.ToDouble(display.Text));
+                    double sqrtAns = Math.Sqrt(GetDisplayTextDouble());
                     display.Text = $"{sqrtAns}";
                     isSqrtBtnUsed = true;
                     break;
                 case '%':
                     displayHold.Text = display.Text;
-                    double percentAns = Convert.ToDouble(display.Text) / 100;
+                    double percentAns = GetDisplayTextDouble() / 100;
                     display.Text = $"{percentAns}";
                     break;
                 case 'I':
@@ -187,7 +194,7 @@ namespace Calculator
                         displayHold.Text = display.Text;
                     }
                     displayHold.Text = $"1/({displayHold.Text})";
-                    double inverseAns = 1 / Convert.ToDouble(display.Text);
+                    double inverseAns = 1 / GetDisplayTextDouble();
                     display.Text = $"{inverseAns}";
                     isInverseBtnUsed = true;
                     break;
@@ -198,8 +205,6 @@ namespace Calculator
         }
         private void Btn_ClearE_Click(object sender, EventArgs e)
         {
-            //display.Text.Remove(display.Text.LastIndexOf(display.Text));
-            //display.Undo();
             display.Text = "0";
             isOperatorUsed = false;
         }
@@ -207,11 +212,7 @@ namespace Calculator
         {
             display.Text ="0";
             displayHold.Clear();
-            isAnswered = false;
-            isEqualPressed = false;
-            isOperatorUsed = false;
-            isOperatorUsed1 = false;
-            isSpecialOperatorsUsed = false;
+            isAnswered = isEqualPressed = isOperatorUsed = isOperatorUsed1 = isSpecialOperatorsUsed = false;
         }
         private void Btn_Delete_Click(object sender, EventArgs e)
         {
@@ -232,26 +233,29 @@ namespace Calculator
         {
             if (isEqualPressed)
             {
-
+                double input = GetDisplayTextDouble();
+                display.Text = Calculate(input, lastinput, lastOperatorUsed);
+                displayHold.Text = $"{input}{lastOperatorUsed}{lastinput} =";
+            }
+            else if (isOperatorUsed1)
+            {
+                double input = Convert.ToDouble(display.Text.TrimEnd(operators));
+                lastinput = GetDisplayTextDouble();
+                display.Text = Calculate(GetDisplayHoldDouble(), input, lastOperatorUsed);
+                displayHold.Text = $"{displayHold.Text}{lastinput} =";
             }
             else if (isSpecialOperatorsUsed)
             {
                 displayHold.Text += " =";
                 isSpecialOperatorsUsed = false;
-                //isEqualPressed = true;
-            }
-            else if (isOperatorUsed1)
-            {
-                double input = Convert.ToDouble(display.Text.TrimEnd(operators));
-                lastinput = Convert.ToDouble(display.Text);
-                Calculate(input, lastOperatorUsed, "");
-                displayHold.Text = $"{displayHold.Text}{lastinput} =";
-                //isEqualPressed = true;
             }
             else if (!isEqualPressed)
             {
-                displayHold.Text = $"{display.Text} =s";
-                //isEqualPressed = true;
+                displayHold.Text = $"{display.Text} =";
+            }
+            else
+            {
+                
             }
             isEqualPressed = true;
             isAnswered = true;

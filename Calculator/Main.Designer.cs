@@ -1,7 +1,7 @@
 ﻿
 namespace Calculator
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         ///  Required designer variable.
@@ -63,7 +63,11 @@ namespace Calculator
             // 
             // btnNeg
             // 
+            this.btnNeg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNeg.AutoSize = true;
+            this.btnNeg.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNeg.Location = new System.Drawing.Point(210, 135);
             this.btnNeg.Name = "btnNeg";
             this.btnNeg.Size = new System.Drawing.Size(60, 60);
@@ -75,7 +79,11 @@ namespace Calculator
             // 
             // btn0
             // 
+            this.btn0.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn0.AutoSize = true;
+            this.btn0.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn0.Location = new System.Drawing.Point(12, 402);
             this.btn0.Name = "btn0";
             this.btn0.Size = new System.Drawing.Size(126, 60);
@@ -87,7 +95,11 @@ namespace Calculator
             // 
             // btnDot
             // 
+            this.btnDot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDot.AutoSize = true;
+            this.btnDot.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDot.Location = new System.Drawing.Point(144, 402);
             this.btnDot.Name = "btnDot";
             this.btnDot.Size = new System.Drawing.Size(60, 60);
@@ -99,7 +111,11 @@ namespace Calculator
             // 
             // btnEquals
             // 
+            this.btnEquals.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEquals.AutoSize = true;
+            this.btnEquals.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEquals.Location = new System.Drawing.Point(276, 336);
             this.btnEquals.Name = "btnEquals";
             this.btnEquals.Size = new System.Drawing.Size(60, 126);
@@ -111,7 +127,11 @@ namespace Calculator
             // 
             // btn3
             // 
+            this.btn3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn3.AutoSize = true;
+            this.btn3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn3.Location = new System.Drawing.Point(144, 336);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(60, 60);
@@ -123,7 +143,11 @@ namespace Calculator
             // 
             // btnPlus
             // 
+            this.btnPlus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPlus.AutoSize = true;
+            this.btnPlus.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnPlus.Location = new System.Drawing.Point(210, 402);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Size = new System.Drawing.Size(60, 60);
@@ -135,7 +159,11 @@ namespace Calculator
             // 
             // btn2
             // 
+            this.btn2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn2.AutoSize = true;
+            this.btn2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn2.Location = new System.Drawing.Point(78, 336);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(60, 60);
@@ -147,7 +175,11 @@ namespace Calculator
             // 
             // btn1
             // 
+            this.btn1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn1.AutoSize = true;
+            this.btn1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn1.Location = new System.Drawing.Point(12, 336);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(60, 60);
@@ -159,7 +191,11 @@ namespace Calculator
             // 
             // btn4
             // 
+            this.btn4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn4.AutoSize = true;
+            this.btn4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn4.Location = new System.Drawing.Point(12, 268);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(60, 60);
@@ -171,7 +207,11 @@ namespace Calculator
             // 
             // btn5
             // 
+            this.btn5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn5.AutoSize = true;
+            this.btn5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn5.Location = new System.Drawing.Point(78, 268);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(60, 60);
@@ -183,7 +223,11 @@ namespace Calculator
             // 
             // btn9
             // 
+            this.btn9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn9.AutoSize = true;
+            this.btn9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn9.Location = new System.Drawing.Point(144, 202);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(60, 60);
@@ -195,7 +239,11 @@ namespace Calculator
             // 
             // btn8
             // 
+            this.btn8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn8.AutoSize = true;
+            this.btn8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn8.Location = new System.Drawing.Point(78, 202);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(60, 60);
@@ -207,7 +255,11 @@ namespace Calculator
             // 
             // btn7
             // 
+            this.btn7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn7.AutoSize = true;
+            this.btn7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn7.Location = new System.Drawing.Point(12, 202);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(60, 60);
@@ -219,7 +271,11 @@ namespace Calculator
             // 
             // btn6
             // 
+            this.btn6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn6.AutoSize = true;
+            this.btn6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn6.Location = new System.Drawing.Point(144, 268);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(60, 60);
@@ -231,7 +287,11 @@ namespace Calculator
             // 
             // btnMult
             // 
+            this.btnMult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMult.AutoSize = true;
+            this.btnMult.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnMult.Location = new System.Drawing.Point(210, 268);
             this.btnMult.Name = "btnMult";
             this.btnMult.Size = new System.Drawing.Size(60, 60);
@@ -243,7 +303,11 @@ namespace Calculator
             // 
             // btnMinus
             // 
+            this.btnMinus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinus.AutoSize = true;
+            this.btnMinus.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnMinus.Location = new System.Drawing.Point(210, 336);
             this.btnMinus.Name = "btnMinus";
             this.btnMinus.Size = new System.Drawing.Size(60, 60);
@@ -255,7 +319,11 @@ namespace Calculator
             // 
             // btnDiv
             // 
+            this.btnDiv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDiv.AutoSize = true;
+            this.btnDiv.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDiv.Location = new System.Drawing.Point(210, 202);
             this.btnDiv.Name = "btnDiv";
             this.btnDiv.Size = new System.Drawing.Size(60, 60);
@@ -267,7 +335,11 @@ namespace Calculator
             // 
             // btnClearE
             // 
+            this.btnClearE.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClearE.AutoSize = true;
+            this.btnClearE.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnClearE.Location = new System.Drawing.Point(78, 135);
             this.btnClearE.Name = "btnClearE";
             this.btnClearE.Size = new System.Drawing.Size(60, 60);
@@ -279,7 +351,8 @@ namespace Calculator
             // 
             // display
             // 
-            this.display.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.display.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.display.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.display.Location = new System.Drawing.Point(12, 45);
             this.display.MaxLength = 16;
             this.display.Multiline = true;
@@ -294,7 +367,11 @@ namespace Calculator
             // 
             // btnClear
             // 
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClear.AutoSize = true;
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnClear.Location = new System.Drawing.Point(144, 135);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(60, 60);
@@ -307,17 +384,23 @@ namespace Calculator
             // displayHold
             // 
             this.displayHold.BackColor = System.Drawing.SystemColors.Control;
+            this.displayHold.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.displayHold.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.displayHold.Location = new System.Drawing.Point(12, 12);
             this.displayHold.Name = "displayHold";
             this.displayHold.ReadOnly = true;
             this.displayHold.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.displayHold.Size = new System.Drawing.Size(324, 27);
+            this.displayHold.Size = new System.Drawing.Size(324, 20);
             this.displayHold.TabIndex = 3;
             this.displayHold.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // delete
             // 
+            this.delete.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.delete.AutoSize = true;
+            this.delete.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.delete.Location = new System.Drawing.Point(12, 135);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(60, 60);
@@ -329,7 +412,11 @@ namespace Calculator
             // 
             // squareRoot
             // 
+            this.squareRoot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.squareRoot.AutoSize = true;
+            this.squareRoot.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.squareRoot.Location = new System.Drawing.Point(276, 135);
             this.squareRoot.Name = "squareRoot";
             this.squareRoot.Size = new System.Drawing.Size(60, 60);
@@ -342,7 +429,11 @@ namespace Calculator
             // 
             // inverse
             // 
+            this.inverse.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.inverse.AutoSize = true;
+            this.inverse.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.inverse.Location = new System.Drawing.Point(276, 268);
             this.inverse.Name = "inverse";
             this.inverse.Size = new System.Drawing.Size(60, 60);
@@ -355,7 +446,11 @@ namespace Calculator
             // 
             // button5
             // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button5.AutoSize = true;
+            this.button5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button5.Location = new System.Drawing.Point(276, 202);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(60, 60);
@@ -368,6 +463,9 @@ namespace Calculator
             // 
             // memoryClear
             // 
+            this.memoryClear.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.memoryClear.AutoSize = true;
             this.memoryClear.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.memoryClear.Enabled = false;
@@ -385,6 +483,9 @@ namespace Calculator
             // 
             // memoryRecall
             // 
+            this.memoryRecall.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.memoryRecall.AutoSize = true;
             this.memoryRecall.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.memoryRecall.Enabled = false;
@@ -402,6 +503,9 @@ namespace Calculator
             // 
             // memorySave
             // 
+            this.memorySave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.memorySave.AutoSize = true;
             this.memorySave.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.memorySave.FlatAppearance.BorderSize = 0;
@@ -418,6 +522,9 @@ namespace Calculator
             // 
             // memoryAdd
             // 
+            this.memoryAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.memoryAdd.AutoSize = true;
             this.memoryAdd.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.memoryAdd.FlatAppearance.BorderSize = 0;
@@ -434,6 +541,9 @@ namespace Calculator
             // 
             // memoryMinus
             // 
+            this.memoryMinus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.memoryMinus.AutoSize = true;
             this.memoryMinus.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.memoryMinus.FlatAppearance.BorderSize = 0;
@@ -452,6 +562,7 @@ namespace Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(344, 470);
             this.Controls.Add(this.displayHold);
             this.Controls.Add(this.display);
@@ -483,7 +594,6 @@ namespace Calculator
             this.Controls.Add(this.btn4);
             this.Controls.Add(this.btn0);
             this.Controls.Add(this.btnNeg);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
